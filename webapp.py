@@ -4,6 +4,9 @@ import json
 
 app = Flask(__name__)
 
+ with open('county_demographics.json') as demographics_data:
+        counties = json.load(demographics_data)
+
 @app.route("/")
 def render_main():
     return render_template('home.html', options = get_state_options())
@@ -11,11 +14,9 @@ def render_main():
 @app.route("/home")
 def render_response():
     state = request.args["state"]
-    return render_template('home.html', options = get_state_options(),response = your_interesting_demographic_function(state, counties))
+    return render_template('home.html', options = get_state_options(),response = your_interesting_demographic_function(state))
 
 def get_state_options():
-    with open('county_demographics.json') as demographics_data:
-        counties = json.load(demographics_data)
         
     options = ""
     state = ""
@@ -26,7 +27,7 @@ def get_state_options():
     
     return options
 
-def your_interesting_demographic_function(stateName, counties):
+def your_interesting_demographic_function(stateName):
     count = 0
     while not counties[count]["State"] == stateName:
         count += 1
