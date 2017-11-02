@@ -8,6 +8,10 @@ app = Flask(__name__)
 def render_main():
     return get_state_options()
 
+@app.route("/response")
+def render_response():
+    state = request.args[]
+
 def get_state_options():
     with open('county_demographics.json') as demographics_data:
         counties = json.load(demographics_data)
