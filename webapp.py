@@ -13,8 +13,11 @@ def get_state_options():
         counties = json.load(demographics_data)
         
     options = ""
+    state = ""
     for c in counties:
-        options += Markup("<option value=\"" + c["State"] + "\">" + c["State"] + "</option>")
+        if not c["State"] == state:
+            options += Markup("<option value=\"" + c["State"] + "\">" + c["State"] + "</option>")
+            state = c["State"]
     
     return render_template('home.html', options = options)
 
