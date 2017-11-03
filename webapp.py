@@ -39,6 +39,18 @@ def your_interesting_demographic_function(stateName):
     return state + ": " + county + ": " + word + str(employ)
 
 
+def your_interesting_demographic_function2(stateName):
+    countBegin = 0
+    countEnd = 0
+    while not counties[countBegin]["State"] == stateName:
+        countBegin += 1
+    while counties[countBegin + countEnd]["State"] == stateName:
+       countEnd += 1
+       
+    countyNum = randint(countBegin, countBegin+countEnd)
+    countyDem = {c: v for (c, v) in counties[countyNum].items() if not c == stateName or c == counties[countyNum]["County"]}
+       
+
 if __name__=="__main__":
     app.run(debug=False, port=54321)
 
