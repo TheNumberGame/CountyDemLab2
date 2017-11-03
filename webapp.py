@@ -49,7 +49,7 @@ def your_interesting_demographic_function2(stateName):
        
     countyNum = randint(countBegin, countBegin+countEnd)
     countyDem = {c: v for (c, v) in counties[countyNum].items() if not c == stateName or c == counties[countyNum]["County"]}
-       
+     
 
 if __name__=="__main__":
     app.run(debug=False, port=54321)
