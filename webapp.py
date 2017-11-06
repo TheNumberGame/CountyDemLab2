@@ -14,7 +14,7 @@ def render_main():
 @app.route("/home")
 def render_response():
     state = request.args["state"]
-    return render_template('home.html', options = get_state_options(),response = your_interesting_demographic_function(state))
+    return render_template('home.html', options = get_state_options(),response = your_interesting_demographic_function2(state))
 
 def get_state_options():
         
@@ -49,7 +49,8 @@ def your_interesting_demographic_function2(stateName):
        
     countyNum = randint(countBegin, countBegin+countEnd)
     countyDem = {c: v for (c, v) in counties[countyNum].items() if not c == stateName or c == counties[countyNum]["County"]}
-     
+    
+    return countyDem
 
 if __name__=="__main__":
     app.run(debug=False, port=54321)
