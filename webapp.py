@@ -57,10 +57,10 @@ def your_interesting_demographic_function2(stateName):
     except TypeError:
        #countyFact = countyDem[random.choice(list(countyDem.keys()))]
        #randKey =  random.choice(list(countyFact.keys()))
-       return stateName + ": " + counties[countyNum]["County"] + ": " + randKey + ": "+ str(countyFact[randKey])
+       return stateName + ": " + str(counties[countyNum]["County"]) + ": " + randKey + ": "+ str(countyFact[randKey])
     except:
        #countyFact = countyDem[random.choice(list(countyDem.keys()))]
-       return stateName + ": " + counties[countyNum]["County"] + ": " + countyFact  
+       return stateName + ": " + str(counties[countyNum]["County"]) + ": " + countyFact  
               
               
 if __name__=="__main__":
