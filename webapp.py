@@ -49,12 +49,20 @@ def your_interesting_demographic_function2(stateName):
        
     countyNum = random.randint(countBegin, countBegin+countEnd)
     countyDem = {c: v for c, v in counties[countyNum].items() if not v == stateName and not v == counties[countyNum]["County"]}
-    countyFact = countyDem[random.choice(list(countyDem.keys()))]
-    randKey =  random.choice(list(countyFact.keys()))
-       
-    return stateName + ": " + counties[countyNum]["County"] + ": " + randKey + ": "+ str(countyFact[randKey])           
-    
-
+    try:
+       countyFact = countyDem[random.choice(list(countyDem.keys()))]
+       return stateName + ": " + counties[countyNum]["County"] + ": " + countyFact        
+    except try:
+       countyFact = countyDem[random.choice(list(countyDem.keys()))]
+       randKey =  random.choice(list(countyFact.keys()))
+       return stateName + ": " + counties[countyNum]["County"] + ": " + randKey + ": "+ str(countyFact[randKey])
+    except:
+       countyFact = countyDem[random.choice(list(countyDem.keys()))]
+       randKey =  random.choice(list(countyFact.keys()))
+       randKey2 = random.choice(list(countyKey2.keys()))
+       return stateName + ": " + counties[countyNum]["County"] + ": " + randKey + ": "+ str(countyFact[randKey]) + ": " + str(countyFact[randKey][randkey2])
+              
+              
 if __name__=="__main__":
     app.run(debug=False, port=54321)
 
