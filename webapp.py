@@ -59,7 +59,7 @@ def your_interesting_demographic_function2(stateName):
           return stateName + ": " + counties[countyNum]["County"] + ": " + randKey2 + ": " countyDem[countyFact][randKey][randKey2]
        except:
           return stateName + ": " + counties[countyNum]["County"] + ": " + randKey + ": " countyDem[countyFact][randKey]
-    except:
+     except:
        return stateName + ": " + counties[countyNum]["County"] + ": " + countyFact + counties[countyNum][countyFact]
     
       
