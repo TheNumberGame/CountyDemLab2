@@ -49,18 +49,23 @@ def your_interesting_demographic_function2(stateName):
        
     countyNum = random.randint(countBegin, countBegin+countEnd)
     countyDem = {c: v for c, v in counties[countyNum].items() if not v == stateName and not v == counties[countyNum]["County"]}
+    countyFact = countyDem[random.choice(list(countyDem.keys()))]
+    randKey = ""
+    randKey2 = ""
     try:
-       countyFact = countyDem[random.choice(list(countyDem.keys()))]
        randKey =  random.choice(list(countyFact.keys()))
-       randKey2 = random.choice(list(countyKey2.keys()))
-       return stateName + ": " + counties[countyNum]["County"] + ": " + randKey + ": "+ str(countyFact[randKey]) + ": " + str(countyFact[randKey][randkey2])  
-    except TypeError:
-       #countyFact = countyDem[random.choice(list(countyDem.keys()))]
-       #randKey =  random.choice(list(countyFact.keys()))
-       return stateName + ": " + str(counties[countyNum]["County"]) + ": " + randKey + ": "+ str(countyFact[randKey])
+       try:
+          randKey2 = random.choice(list(countyKey2.keys()))
+          return stateName + ": " + counties[countyNum]["County"] + ": " + randKey2 + ": " countyDem[countyFact][randKey2]
+       except:
+          return stateName + ": " + counties[countyNum]["County"] + ": " + randKey + ": " countyDem[countyFact][randKey]
     except:
-       #countyFact = countyDem[random.choice(list(countyDem.keys()))]
-       return stateName + ": " + str(counties[countyNum]["County"]) + ": " + countyFact  
+       return stateName + ": " + counties[countyNum]["County"] + ": " + countyFact + counties[countyNum][countyFact]
+    
+      
+       
+       
+    return stateName + ": " + counties[countyNum]["County"] + ": " + randKey + ": "+ str(countyFact[randKey]) + ": " + str(countyFact[randKey][randkey2])   
               
               
 if __name__=="__main__":
