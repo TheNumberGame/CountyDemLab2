@@ -51,7 +51,7 @@ def your_interesting_demographic_function2(stateName):
     countyDem = {c: v for c, v in counties[countyNum].items() if not v == stateName and not v == counties[countyNum]["County"]}
     countyFact = countyDem[random.choice(list(countyDem.keys()))]
     
-    return stateName + ": " + counties[countyNum]["County"] + ": " + countyFact[random.choice(list(countyFact.keys()))]           
+    return stateName + ": " + counties[countyNum]["County"] + ": " + str(countyFact[random.choice(list(countyFact.keys()))])           
     
 
 if __name__=="__main__":
