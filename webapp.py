@@ -51,7 +51,8 @@ def your_interesting_demographic_function2(stateName):
     ##countyDem = {c: v for c, v in counties[countyNum].items() if not v == stateName or not v == counties[countyNum]["County"]}
     countyDem = {}
     for c, v in counties[countyNum].items():
-       countyDem[c] = v
+       if not v == stateName:
+              countyDem[c] = v
               
     
     return countyDem
