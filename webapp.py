@@ -52,6 +52,7 @@ def your_interesting_demographic_function2(stateName):
     countyFact = countyDem[random.choice(list(countyDem.keys()))]
     randKey = ""
     randKey2 = ""
+    return countyFact
     try:
        randKey =  random.choice(list(countyFact.keys()))
        try:
