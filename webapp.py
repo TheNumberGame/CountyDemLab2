@@ -49,7 +49,7 @@ def your_interesting_demographic_function2(stateName):
        
     countyNum = random.randint(countBegin, countBegin+countEnd)
     countyDem = {c: v for c, v in counties[countyNum].items() if not v == stateName and not v == counties[countyNum]["County"]}
-    countyFact = random.choice(list(countyDem.keys()))
+    countyFact = countyDem[random.choice(list(countyDem.keys()))]
     randKey = ""
     randKey2 = ""
     try:
@@ -60,8 +60,7 @@ def your_interesting_demographic_function2(stateName):
        except:
           return stateName + ": " + counties[countyNum]["County"] + ": " + randKey + ": " + countyDem[countyFact][randKey]
     except:
-       randKey =  random.choice(list(countyFact.keys()))
-       return stateName + ": " + counties[countyNum]["County"] + ": "+ countyFact + ":  " + str(counties[countyNum][countyFact])
+       return stateName + ": " + counties[countyNum]["County"] + ": "+ countyFact.keys() + ":  " + str(counties[countyNum][countyFact])
     
       
        
