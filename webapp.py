@@ -58,7 +58,7 @@ def your_interesting_demographic_function2(stateName):
           randKey2 = random.choice(list(countyKey2.keys()))
           return stateName + ": " + counties[countyNum]["County"] + ": " + randKey2 + ": " countyDem[countyFact][randKey][randKey2]
        except:
-          return stateName + ": " + counties[countyNum]["County"] + ": " + randKey + ": " countyDem[countyFact][randKey]
+          return stateName + ": " + counties[countyNum]["County"] + ": " + randKey + ": " + countyDem[countyFact][randKey]
      except:
        return stateName + ": " + counties[countyNum]["County"] + ": " + countyFact + counties[countyNum][countyFact]
     
