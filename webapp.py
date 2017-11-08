@@ -60,7 +60,7 @@ def your_interesting_demographic_function2(stateName):
        except:
           return stateName + ": " + counties[countyNum]["County"] + ": " + randKey + ": " + countyDem[countyFact][randKey]
     except:
-       return stateName + ": " + counties[countyNum]["County"] + ": "+ countyFact.keys() + ":  " + str(counties[countyNum][countyFact])
+       return stateName + ": " + counties[countyNum]["County"] + ": "+ str(countyFact.keys()) + ":  " + str(counties[countyNum][countyFact])
     
       
        
