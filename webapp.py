@@ -43,7 +43,7 @@ def your_interesting_demographic_function2(stateName):
     countBegin = 0
     countEnd = 0
     while not counties[countBegin]["State"] == stateName:
-        countBegin += 1
+       countBegin += 1
     while counties[countBegin + countEnd]["State"] == stateName:
        countEnd += 1
        
@@ -59,13 +59,13 @@ def your_interesting_demographic_function2(stateName):
           return stateName + ": " + counties[countyNum]["County"] + ": " + randKey2 + ": " + countyDem[countyFact][randKey][randKey2]
        except:
           return stateName + ": " + counties[countyNum]["County"] + ": " + randKey + ": " + countyDem[countyFact][randKey]
-     except:
+    except:
        return stateName + ": " + counties[countyNum]["County"] + ": " + countyFact + counties[countyNum][countyFact]
     
       
        
        
-    return stateName + ": " + counties[countyNum]["County"] + ": " + randKey + ": "+ str(countyFact[randKey]) + ": " + str(countyFact[randKey][randkey2])   
+       
               
               
 if __name__=="__main__":
