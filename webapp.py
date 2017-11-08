@@ -14,7 +14,7 @@ def render_main():
 @app.route("/home")
 def render_response():
     state = request.args["state"]
-    return render_template('home.html', options = get_state_options(),response = your_interesting_demographic_function(state))
+    return render_template('home.html', options = get_state_options(),response = your_interesting_demographic_function2(state))
 
 def get_state_options():
         
