@@ -52,7 +52,8 @@ def your_interesting_demographic_function2(stateName):
        countEnd += 1
     
     print(counties[countBegin]["State"], counties[countEnd]["State"])
-       
+    print(counties[countBegin]["County"], counties[countEnd]["County"])
+
     countyNum = random.randint(countBegin, countBegin+countEnd)
     countyDem = {c: v for c, v in counties[countyNum].items() if not v == stateName and not v == counties[countyNum]["County"]}
     countyFact = random.choice(list(countyDem.keys()))
