@@ -44,7 +44,7 @@ def your_interesting_demographic_function2(stateName):
     countEnd = 0
     while not counties[countBegin]["State"] == stateName:
        countBegin += 1
-    while counties[countBegin + countEnd]["State"] == stateName:
+    while counties[countBegin + countEnd]["State"] == stateName and countBegin+countEnd < len(counties):
        countEnd += 1
        
     countyNum = random.randint(countBegin, countBegin+countEnd)
