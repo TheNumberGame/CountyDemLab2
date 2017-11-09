@@ -24,7 +24,7 @@ def get_state_options():
         if not c["State"] == state:
             options += Markup("<option {% if {{ stateName }} ==\"" + c["State"]  +"\" %} selected {% endif %} value=\"" + c["State"] + "\">" + c["State"] + "</option>")
             state = c["State"]
-            print(options)
+            println(options)
     
     return options
 
