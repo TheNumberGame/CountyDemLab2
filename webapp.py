@@ -58,12 +58,12 @@ def your_interesting_demographic_function2(stateName):
        if type(countyDem[countyFact][randKey]) == dict:
           randKey2 = random.choice(list(countyDem[countyFact][randKey].keys()))
           print(0.2)
-          return stateName + ": "+ counties[countyNum]["County"] + ": " + countyFact + ": " + randKey + ": " + randKey2 + ": " + countyDem[countyFact][randKey][randKey2]
+          return str(stateName + ": "+ counties[countyNum]["County"] + ": " + countyFact + ": " + randKey + ": " + randKey2 + ": " + countyDem[countyFact][randKey][randKey2])
        else:
-          return stateName + ": "+ counties[countyNum]["County"] + ": " + countyFact + ": " + randKey + ": " + countyDem[countyFact][randKey]   
+          return str(stateName + ": "+ counties[countyNum]["County"] + ": " + countyFact + ": " + randKey + ": " + countyDem[countyFact][randKey])   
     else:
        print(0.11)
-       return stateName + ": "+ counties[countyNum]["County"] + ": " + countyFact + ": " + countyDem[countyFact]
+       return str(stateName + ": "+ counties[countyNum]["County"] + ": " + countyFact + ": " + countyDem[countyFact])
               
 if __name__=="__main__":
     app.run(debug=False, port=54321)
