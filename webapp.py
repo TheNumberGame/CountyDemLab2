@@ -22,7 +22,7 @@ def get_state_options():
     state = ""
     for c in counties:
         if not c["State"] == state:
-            options += Markup("<option {% if {{ stateName }} ==\"" + c["State"]  +"\" %} selected = "\" + selected + "\"{% endif %} value=\"" + c["State"] + "\">" + c["State"] + "</option>")
+            options += Markup("<option {% if {{ stateName }} ==\"" + c["State"]  +"\" %} selected = selected ""{% endif %} value=\"" + c["State"] + "\">" + c["State"] + "</option>")
             state = c["State"]
             print(options)
     
