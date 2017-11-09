@@ -14,17 +14,20 @@ def render_main():
 @app.route("/home")
 def render_response():
     state = request.args["state"]
-    return render_template('home.html', options = get_state_options(),response = your_interesting_demographic_function2(state), stateName = state)
+    return render_template('home.html', options = get_state_options(state),response = your_interesting_demographic_function2(state), stateName = state)
 
-def get_state_options():
+def get_state_options(default = None):
         
     options = ""
     state = ""
     for c in counties:
         if not c["State"] == state:
-            options += Markup("<option {% if {{ stateName }} ==\"" + c["State"]  +"\" %} selected {% endif %} value=\"" + c["State"] + "\">" + c["State"] + "</option>")
+            if c["State"] == default:  
+              options += Markup("<option selected value=\"" + c["State"] + "\">" + c["State"] + "</option>")
+            else:
+              options += Markup("<option value=\"" + c["State"] + "\">" + c["State"] + "</option>")
             state = c["State"]
-            print(options)
+            #print(options)
     
     return options
 
