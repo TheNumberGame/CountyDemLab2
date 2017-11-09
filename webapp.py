@@ -48,7 +48,7 @@ def your_interesting_demographic_function2(stateName):
     countEnd = 0
     while not counties[countBegin]["State"] == stateName:
        countBegin += 1
-    while countBegin+countEnd < len(counties)-2 and counties[countBegin + countEnd]["State"] == stateName:
+    while countBegin+countEnd < len(counties)-1 and counties[countBegin + countEnd]["State"] == stateName:
        countEnd += 1
     
     print(counties[countBegin]["State"], counties[countEnd]["State"])
